@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    include: oauth
+  datasource:
+    username: ${MYSQL_ID}
+    password: ${MYSQL_PW}
+    url: ${MYSQL_URL}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_batch_fetch_size: 100
+life:
+  access: 86400000
+  refresh: 604800000
+  cookie:
+    access: 86400
+    refresh: 604800
+
+logging:
+  level:
+    root: info
+
+#  access: 1000 * 60 * 60 * 24L #하루
+#  refresh: 7 * 1000 * 60 * 60 * 24L #일주일
+#  cookie.acess: 60 * 60 * 24L #쿠키하루
+#  cookie.refresh: 7 * 60 * 60 * 24L #쿠키일주일

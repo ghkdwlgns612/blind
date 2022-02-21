@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          intra42:
+            client-id: "${OAUTH2_42_ID}"
+            client-secret: "${OAUTH2_42_SECRET}"
+            redirect-uri: "{baseUrl}/login/oauth2/code/intra42"
+            authorization-grant-type: authorization_code
+            client-name: intra42
+            scope: public
+        provider:
+          intra42:
+            authorization-uri: https://api.intra.42.fr/oauth/authorize
+            user-info-uri: https://api.intra.42.fr/v2/me
+            token-uri: https://api.intra.42.fr/oauth/token
+            user-name-attribute: id
